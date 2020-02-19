@@ -1,0 +1,9 @@
+{
+    "name": "chl/chl",
+    "description": "code highlighter lib",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {"HighlightLib\\": "src/"}
+    }
+}
