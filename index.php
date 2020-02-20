@@ -1,10 +1,13 @@
 <?php
-
 require "vendor/autoload.php";
 
 use HighlightLib\CodeHighlight;
+use HighlightLib\Tokenizer\Tokenizer;
+use HighlightLib\Clasifier\Clasifier;
+use HighlightLib\Config\Config;
 
-$var = new CodeHighlight(HighlightLib\Tokenizer);
+$tok = new Tokenizer();
+$clas = new Clasifier();
 
-echo $var->highlight("Salut ce mai faci tu
-hehe, nimic.");
+$var = new CodeHighlight($tok, $clas);
+$var->highlight("");

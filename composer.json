@@ -6,6 +6,8 @@
     },
 
     "autoload": {
-        "psr-4": {"HighlightLib\\": "src/"}
+        "psr-4": {"HighlightLib\\": "src/",
+            "TokenSources\\": "specifications/"
+        }
     }
 }
