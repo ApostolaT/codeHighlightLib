@@ -9,8 +9,7 @@ use HighlightLib\Contracts\TokenInterface;
 class WhiteSpaceToken implements TokenInterface
 {
 
-    public function getCss(): string
-    {
+    public function getCss(): string {
         return "";
     }
 }

@@ -8,13 +8,15 @@ use HighlightLib\Token\WhiteSpaceToken;
 
 class Clasifier implements ClasifierInterface
 {
-    public function __construct() {
+    private $configuration;
 
+    public function __construct(array $configurationArray) {
+        $this->configuration = $configurationArray;
     }
 
-    public function clasify(string $stringToken, array $configurationArray): TokenInterface
+    public function clasify(string $stringToken): TokenInterface
     {
-        foreach ($configurationArray as $key => $value) {
+        foreach ($this->configuration as $key => $value) {
             if (preg_match($key, $stringToken))
                 return new $value;
         }

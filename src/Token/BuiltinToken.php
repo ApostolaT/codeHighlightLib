@@ -7,8 +7,7 @@ use HighlightLib\Contracts\TokenInterface;
 class BuiltinToken implements TokenInterface
 {
 
-    public function getCss(): string
-    {
+    public function getCss(): string {
         return "<span class=\"builtin\">";
     }
 }
