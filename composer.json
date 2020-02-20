@@ -1,7 +1,9 @@
 {
     "name": "chl/chl",
     "description": "code highlighter lib",
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "^8.5"
+    },
 
     "autoload": {
         "psr-4": {"HighlightLib\\": "src/"}
