@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-
 use HighlightLib\Contracts\TokenInterface;
 
 abstract class AbstractToken implements TokenInterface
