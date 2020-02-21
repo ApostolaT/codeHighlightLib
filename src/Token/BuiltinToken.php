@@ -4,9 +4,9 @@ namespace HighlightLib\Token;
 
 use HighlightLib\Contracts\TokenInterface;
 
-class BuiltinToken implements TokenInterface
+class BuiltinToken extends AbstractToken
 {
     public function getCss(): string {
-        return "<span class=\"builtin\">";
+        return "<span class=\"builtin\">".$this->getText()."</span>";
     }
 }

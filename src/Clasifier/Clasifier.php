@@ -14,12 +14,13 @@ class Clasifier implements ClasifierInterface
         $this->configuration = $configurationArray;
     }
 
-    public function clasify(string $stringToken): TokenInterface
+    public function clasify(array $stringToken): TokenInterface
     {
         foreach ($this->configuration as $key => $value) {
-            if (preg_match($key, $stringToken))
-                return new $value;
+            if (preg_match($key, $stringToken[0]))
+                return new $value($stringToken[0], $stringToken[1]);
         }
-    return new WhiteSpaceToken();
+
+    return new WhiteSpaceToken($stringToken[0], $stringToken[1]);
     }
 }

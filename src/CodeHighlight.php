@@ -27,15 +27,9 @@ class CodeHighlight
 
         $tokens = array();
         foreach ($words as $token) {
-            $tokens[] = $this->clasifier->clasify($token[0]);
+            $tokens[] = $this->clasifier->clasify($token);
         }
 
-        $wordsAndTokens = array();
-        $wordsAndTokens[] = $words;
-        $wordsAndTokens[] = $tokens;
-
-        $this->assembler->assemble($wordsAndTokens);
-
-        return $string;
+        return $this->assembler->assemble($tokens);;
     }
 }

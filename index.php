@@ -17,5 +17,5 @@ $assembler = new Assembler();
 $var = new CodeHighlight($tokenizer, $clasifier, $assembler);
 
 echo "<html><meta charset='utf-8'/><title>CodeHighlighterLib</title><link rel='stylesheet' href='style/style.css?>'></head><body><pre>";
-$var->highlight("func_num_args \$i = 1 to \$n do { \n     \$sum = \$n - \$i ; \n }");
+echo $var->highlight("mysqli_stat \$i in 0 to \$n do \n \t \$sum = \$n - \$i ; \n }");
 echo "</pre></body>";

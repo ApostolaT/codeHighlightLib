@@ -3,28 +3,21 @@
 namespace HighlightLib\Assembler;
 
 use HighlightLib\Contracts\AssemblerInterface;
+use HighlightLib\SpacePrinter\SpacePrinter;
 
 class Assembler implements AssemblerInterface
 {
     public function assemble(array $tokens): string
     {
+        $spacePrinter = new SpacePrinter();
         $index = 0;
-        foreach ($tokens[1] as $key => $value) {
-            if ($index != 0) {
-                $offset = $tokens[0][$index][1];
-                $length = $tokens[0][$index-1][1] + strlen($tokens[0][$index-1][0]);
-                $spaceNumber =  $offset - $length;
-                while ($spaceNumber != 0) {echo " "; $spaceNumber--;}
-            }
-
-            $css = $value->getCss();
-            if ($css !== "" && $css !== "<br>")
-                echo $css.$tokens[0][$index][0]."</span>";
-            else
-                echo $css.$tokens[0][$index][0];
+        $string = "";
+        foreach ($tokens as $token) {
+            $string .= $spacePrinter->printSpaces($tokens, $index);
+            $string .= $token->getCss();
             $index++;
         }
 
-        return null;
+        return $string;
     }
 }

@@ -6,9 +6,9 @@ namespace HighlightLib\Token;
 
 use HighlightLib\Contracts\TokenInterface;
 
-class WhiteSpaceToken implements TokenInterface
+class WhiteSpaceToken extends AbstractToken
 {
     public function getCss(): string {
-        return "";
+        return $this->getText();
     }
 }

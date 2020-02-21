@@ -6,10 +6,10 @@ namespace HighlightLib\Token;
 
 use HighlightLib\Contracts\TokenInterface;
 
-class NewlineToken implements TokenInterface
+class NewlineToken extends AbstractToken
 {
 
     public function getCss(): string {
-        return "<br>";
+        return PHP_EOL;
     }
 }
