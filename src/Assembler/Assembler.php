@@ -5,6 +5,11 @@ namespace HighlightLib\Assembler;
 use HighlightLib\Contracts\AssemblerInterface;
 use HighlightLib\SpacePrinter\SpacePrinter;
 
+/**
+ * @inheritDoc
+ * Class Assembler
+ * @package HighlightLib\Assembler
+ */
 class Assembler implements AssemblerInterface
 {
     public function assemble(array $tokens): string

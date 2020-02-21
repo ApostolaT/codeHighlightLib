@@ -6,6 +6,11 @@ use HighlightLib\Contracts\ClasifierInterface;
 use HighlightLib\Contracts\TokenInterface;
 use HighlightLib\Token\WhiteSpaceToken;
 
+/**
+ * @inheritDoc
+ * Class Clasifier
+ * @package HighlightLib\Clasifier
+ */
 class Clasifier implements ClasifierInterface
 {
     private $configuration;
