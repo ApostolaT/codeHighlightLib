@@ -1,7 +1,5 @@
 <?php
 
-namespace HighlightLib\Config;
-
 class Config {
 
     private $array;

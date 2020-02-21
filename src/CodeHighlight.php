@@ -15,7 +15,6 @@ class CodeHighlight
     private $clasifier;
     private $assembler;
 
-//, ClasifierInterface $clasifier, AssemblerInterface $assembler
     public function __construct(TokenizerInterface $tokenizer, ClasifierInterface $clasifier, AssemblerInterface $assembler)
     {
         $this->tokenizer = $tokenizer;
@@ -23,7 +22,6 @@ class CodeHighlight
         $this->assembler = $assembler;
     }
 
-    //in constructor build tokenizer
     public function highlight(string $string): string
     {
         $words = $this->tokenizer->tokenize($string);

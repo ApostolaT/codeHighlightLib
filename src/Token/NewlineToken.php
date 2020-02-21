@@ -10,6 +10,6 @@ class NewlineToken implements TokenInterface
 {
 
     public function getCss(): string {
-        return "\n";
+        return "<br>";
     }
 }
