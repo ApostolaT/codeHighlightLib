@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace HighlightLib;
 
-use HighlightLib\Config\Config;
 use HighlightLib\Contracts\AssemblerInterface;
 use HighlightLib\Contracts\ClasifierInterface;
 use HighlightLib\Contracts\TokenizerInterface;
@@ -25,9 +24,10 @@ class CodeHighlight
     public function highlight(string $string): string
     {
         $words = $this->tokenizer->tokenize($string);
+
         $tokens = array();
-        foreach ($words as $value) {
-            $tokens[] = $this->clasifier->clasify($value);
+        foreach ($words as $token) {
+            $tokens[] = $this->clasifier->clasify($token[0]);
         }
 
         $wordsAndTokens = array();

@@ -10,12 +10,19 @@ class Assembler implements AssemblerInterface
     {
         $index = 0;
         foreach ($tokens[1] as $key => $value) {
-            if ($value->getCss() !== "" && $value->getCss() !== "<br>")
-                echo $value->getCss().$tokens[0][$index]."</span>";
+            if ($index != 0) {
+                $offset = $tokens[0][$index][1];
+                $length = $tokens[0][$index-1][1] + strlen($tokens[0][$index-1][0]);
+                $spaceNumber =  $offset - $length;
+                while ($spaceNumber != 0) {echo " "; $spaceNumber--;}
+            }
+
+            $css = $value->getCss();
+            if ($css !== "" && $css !== "<br>")
+                echo $css.$tokens[0][$index][0]."</span>";
             else
-                echo $value->getCss().$tokens[0][$index];
+                echo $css.$tokens[0][$index][0];
             $index++;
-            echo " ";
         }
 
         return null;

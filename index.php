@@ -16,5 +16,6 @@ $assembler = new Assembler();
 
 $var = new CodeHighlight($tokenizer, $clasifier, $assembler);
 
-echo "<html><head><title>CodeHighlighterLib</title><link rel='stylesheet' href='style/style.css?>'></head>";
-$var->highlight("for \$i = 1 to \$n do \n while");
+echo "<html><meta charset='utf-8'/><title>CodeHighlighterLib</title><link rel='stylesheet' href='style/style.css?>'></head><body><pre>";
+$var->highlight("func_num_args \$i = 1 to \$n do { \n     \$sum = \$n - \$i ; \n }");
+echo "</pre></body>";
